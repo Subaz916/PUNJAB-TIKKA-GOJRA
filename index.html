@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Punjab Jab Tikkah Gojra — Authentic BBQ, Tikkah &amp; Desi Taste</title>
+<meta name="description" content="Punjab Jab Tikkah Gojra — freshly prepared BBQ, juicy tikkah and traditional Pakistani flavors in Gojra, Punjab. Order online for delivery or pickup." />
+<meta name="theme-color" content="#0B0B0B" />
+<meta name="color-scheme" content="dark light" />
+<link rel="icon" href="assets/logo.png" />
+<link rel="apple-touch-icon" href="assets/logo.png" />
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ======================================================================
+     ACCESSIBILITY: skip link
+     ====================================================================== -->
+<a class="skip-link" href="#menu">Skip to menu</a>
+
+<!-- ======================================================================
+     1. ANNOUNCEMENT BAR
+     ====================================================================== -->
+<div class="announcement" id="announcementBar">
+  <div class="announcement__track">
+    <span class="announcement__item">🔥 Free delivery on orders over <strong>Rs. 2,000</strong></span>
+    <span class="announcement__sep" aria-hidden="true">•</span>
+    <span class="announcement__item">🥩 Fresh BBQ prepared to order</span>
+    <span class="announcement__sep" aria-hidden="true">•</span>
+    <span class="announcement__item">📍 Gojra, Punjab — Delivery &amp; Pickup</span>
+    <span class="announcement__sep" aria-hidden="true">•</span>
+    <span class="announcement__item">🎉 Family BBQ Platter <strong>Rs. 1,999</strong></span>
+  </div>
+  <button class="announcement__close" id="announcementClose" type="button" aria-label="Dismiss announcement bar">&times;</button>
+</div>
+
+<!-- ======================================================================
+     3. HEADER / NAVIGATION
+     ====================================================================== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+
+    <a class="brand" href="#home" aria-label="Punjab Jab Tikkah Gojra — go to top">
+      <img class="brand__logo" src="assets/logo.png" alt="Punjab Jab Tikkah Gojra logo" width="52" height="52" data-logo />
+      <span class="brand__text">
+        <span class="brand__name">Punjab Jab Tikkah</span>
+        <span class="brand__place">Gojra</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <a href="#home" class="nav__link">Home</a>
+      <a href="#menu" class="nav__link">Menu</a>
+      <a href="#deals" class="nav__link">Deals</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#gallery" class="nav__link">Gallery</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="searchPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+      </button>
+
+      <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+      </button>
+
+      <button class="cart-btn" id="headerCartBtn" type="button" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.2l2.3 11.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.5L21 8H6"></path><circle cx="10" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle></svg>
+        <span class="cart-btn__label">Cart</span>
+        <span class="cart-count" id="cartCount" data-count="0">0</span>
+      </button>
+
+      <a class="btn btn--primary btn--sm header__order" href="#menu" data-action="order-now">Order Now</a>
+
+      <button class="icon-btn burger" id="burgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search panel -->
+  <div class="search-panel" id="searchPanel" hidden>
+    <div class="container search-panel__inner">
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="search-field__icon"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+        <label class="sr-only" for="globalSearch">Search the menu</label>
+        <input id="globalSearch" class="search-field__input" type="search" placeholder="Search tikkah, karahi, biryani…" autocomplete="off" />
+        <button class="search-field__clear" id="searchClear" type="button" aria-label="Clear search">Clear</button>
+      </div>
+      <div class="search-panel__meta">
+        <span id="searchResultCount" class="search-panel__count">Type to search the full menu</span>
+        <div class="chips chips--sm" id="searchChips" aria-label="Popular searches">
+          <button class="chip chip--sm" type="button" data-search-term="tikkah">tikkah</button>
+          <button class="chip chip--sm" type="button" data-search-term="karahi">karahi</button>
+          <button class="chip chip--sm" type="button" data-search-term="biryani">biryani</button>
+          <button class="chip chip--sm" type="button" data-search-term="roll">roll</button>
+          <button class="chip chip--sm" type="button" data-search-term="fries">fries</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile navigation drawer -->
+<div class="mobile-nav" id="mobileNav" hidden>
+  <div class="mobile-nav__backdrop" data-close-mobile-nav></div>
+  <nav class="mobile-nav__panel" aria-label="Mobile navigation">
+    <div class="mobile-nav__head">
+      <img class="mobile-nav__logo" src="assets/logo.png" alt="Punjab Jab Tikkah Gojra logo" width="44" height="44" data-logo />
+      <button class="icon-btn" type="button" data-close-mobile-nav aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="#home" class="mobile-nav__link" data-close-mobile-nav>Home</a>
+      <a href="#menu" class="mobile-nav__link" data-close-mobile-nav>Menu</a>
+      <a href="#deals" class="mobile-nav__link" data-close-mobile-nav>Deals</a>
+      <a href="#about" class="mobile-nav__link" data-close-mobile-nav>About</a>
+      <a href="#gallery" class="mobile-nav__link" data-close-mobile-nav>Gallery</a>
+      <a href="#reviews" class="mobile-nav__link" data-close-mobile-nav>Reviews</a>
+      <a href="#location" class="mobile-nav__link" data-close-mobile-nav>Location</a>
+      <a href="#contact" class="mobile-nav__link" data-close-mobile-nav>Contact</a>
+      <a href="#menu" class="mobile-nav__link" data-close-mobile-nav>My Orders</a>
+    </div>
+    <div class="mobile-nav__foot">
+      <button class="btn btn--ghost btn--block" id="mobileOrdersBtn" type="button">My Orders</button>
+      <a class="btn btn--primary btn--block" href="#menu" data-close-mobile-nav>Order Now</a>
+    </div>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ======================================================================
+     4. HERO
+     ====================================================================== -->
+<section class="hero" id="home">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="hero__glow hero__glow--1"></span>
+    <span class="hero__glow hero__glow--2"></span>
+    <span class="hero__grid"></span>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow"><span class="pulse-dot" aria-hidden="true"></span> Authentic BBQ in Gojra</p>
+      <h1 class="hero__title">Punjab Jab Tikkah <span class="grad">Gojra</span></h1>
+      <p class="hero__subtitle">Authentic BBQ, Tikkah &amp; Desi Taste You’ll Love</p>
+      <p class="hero__text">Freshly prepared BBQ, juicy tikkah and traditional Pakistani flavors — made fresh for you.</p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--lg" href="#menu" data-action="order-now">Order Now</a>
+        <a class="btn btn--outline btn--lg" href="#menu">View Menu</a>
+      </div>
+
+      <ul class="badges" aria-label="Why order with us">
+        <li class="badge"><span aria-hidden="true">🔥</span> Fresh BBQ</li>
+        <li class="badge"><span aria-hidden="true">🥩</span> Quality Meat</li>
+        <li class="badge"><span aria-hidden="true">👨‍🍳</span> Expertly Prepared</li>
+        <li class="badge"><span aria-hidden="true">🚚</span> Easy Ordering</li>
+      </ul>
+
+      <dl class="stats" id="heroStats" aria-label="Restaurant highlights">
+        <div class="stat"><dt data-count-to="0" data-stat="items">0</dt><dd>Menu Items</dd></div>
+        <div class="stat"><dt data-count-to="0" data-stat="categories">0</dt><dd>Categories</dd></div>
+        <div class="stat"><dt data-count-to="0" data-stat="deals">0</dt><dd>Value Deals</dd></div>
+        <div class="stat stat--text"><dt>Daily</dt><dd>Open 12 PM – 11 PM</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__logo-card">
+        <span class="hero__logo-ring" aria-hidden="true"></span>
+        <img src="assets/logo.png" alt="Punjab Jab Tikkah Gojra official logo" width="260" height="260" data-logo />
+      </div>
+      <figure class="hero__dish-card" data-reveal>
+        <img id="heroDishImage" src="" alt="" loading="eager" decoding="async" width="420" height="300" />
+        <figcaption>
+          <span class="hero__dish-name" id="heroDishName">Chicken Tikkah</span>
+          <span class="hero__dish-meta"><span aria-hidden="true">⭐</span> <span id="heroDishRating">4.8</span> · <strong id="heroDishPrice">Rs. 450</strong></span>
+        </figcaption>
+      </figure>
+      <div class="hero__float hero__float--rate" aria-hidden="true">
+        <strong>4.8</strong><span>Customer Rating</span>
+      </div>
+      <div class="hero__float hero__float--time" aria-hidden="true">
+        <span class="hero__float-ico">⏱</span><span>25–40 min prep</span>
+      </div>
+      <p class="hero__live" id="heroLive" data-open="false" role="status" aria-live="polite">
+        <span class="hero__live-dot" aria-hidden="true"></span>
+        <span id="heroLiveText">Checking opening hours…</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     5. FEATURED CATEGORIES
+     ====================================================================== -->
+<section class="section" id="categories" aria-labelledby="categoriesTitle">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Browse</p>
+      <h2 class="section__title" id="categoriesTitle">Featured Categories</h2>
+      <p class="section__sub">Tap a category to instantly filter the menu.</p>
+    </header>
+    <div class="cat-grid" id="categoryGrid" role="list"></div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     6. POPULAR ITEMS
+     ====================================================================== -->
+<section class="section section--tight" id="popular" aria-labelledby="popularTitle">
+  <div class="container">
+    <header class="section__head section__head--row" data-reveal>
+      <div>
+        <p class="eyebrow">Most loved</p>
+        <h2 class="section__title" id="popularTitle">Popular Items</h2>
+      </div>
+      <a class="link-arrow" href="#menu">See full menu →</a>
+    </header>
+    <div class="product-grid" id="popularGrid"></div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     7. FULL MENU
+     ====================================================================== -->
+<section class="section" id="menu" aria-labelledby="menuTitle">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Full menu</p>
+      <h2 class="section__title" id="menuTitle">What Are You Craving?</h2>
+      <p class="section__sub">Freshly cooked BBQ, tikkah, karahi, biryani and more — all priced in PKR.</p>
+    </header>
+
+    <div class="menu-toolbar" data-reveal>
+      <div class="chips chips--scroll" id="menuCategoryChips" role="tablist" aria-label="Menu categories"></div>
+      <div class="menu-toolbar__right">
+        <label class="select-wrap">
+          <span class="sr-only">Sort menu</span>
+          <select id="sortSelect" class="select">
+            <option value="popular">Sort: Popular</option>
+            <option value="rating">Sort: Top Rated</option>
+            <option value="price-asc">Sort: Price — Low to High</option>
+            <option value="price-desc">Sort: Price — High to Low</option>
+            <option value="name">Sort: Name (A–Z)</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="search-inline">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+      <label class="sr-only" for="menuSearch">Filter menu items</label>
+      <input id="menuSearch" type="search" placeholder="Filter items — try “tikkah”, “karahi”, “biryani”…" autocomplete="off" />
+      <button class="search-inline__clear" id="menuSearchClear" type="button" aria-label="Clear filter">Clear</button>
+    </div>
+
+    <p class="menu-status" id="menuStatus" role="status" aria-live="polite"></p>
+    <div class="product-grid" id="menuGrid"></div>
+    <div class="empty" id="menuEmpty" hidden>
+      <div class="empty__ico" aria-hidden="true">🍽️</div>
+      <p class="empty__title">No items found.</p>
+      <p class="empty__text">Try a different search term or category.</p>
+      <button class="btn btn--outline" id="resetFiltersBtn" type="button">Reset filters</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     12. SPECIAL DEALS
+     ====================================================================== -->
+<section class="section section--deals" id="deals" aria-labelledby="dealsTitle">
+  <div class="deals__bg" aria-hidden="true"><span class="hero__glow hero__glow--1"></span></div>
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Limited time</p>
+      <h2 class="section__title" id="dealsTitle">Special Deals</h2>
+      <p class="section__sub">Grab a complete meal for less. Add any deal straight to your cart.</p>
+    </header>
+    <div class="deals-grid" id="dealsGrid"></div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     20. ABOUT
+     ====================================================================== -->
+<section class="section" id="about" aria-labelledby="aboutTitle">
+  <div class="container about">
+    <div class="about__media" data-reveal>
+      <img id="aboutImage" src="" alt="BBQ being prepared at Punjab Jab Tikkah Gojra" loading="lazy" decoding="async" width="640" height="480" />
+      <div class="about__badge">
+        <img src="assets/logo.png" alt="" width="48" height="48" data-logo />
+        <div><strong>Punjab Jab Tikkah</strong><span>Gojra</span></div>
+      </div>
+    </div>
+    <div class="about__body" data-reveal>
+      <p class="eyebrow">About us</p>
+      <h2 class="section__title" id="aboutTitle">Authentic Taste. Real BBQ. Punjab’s Flavor.</h2>
+      <p>Punjab Jab Tikkah Gojra is focused on serving fresh, flavorful BBQ and traditional desi food with quality ingredients and a taste customers can enjoy with family and friends.</p>
+      <p>From smoky chicken tikkah and sizzling seekh kebabs to slow-cooked karahi and fragrant biryani — everything is prepared fresh, to order, with the flavours Punjab is known for.</p>
+      <ul class="check-list">
+        <li>Freshly prepared tikkah &amp; BBQ</li>
+        <li>Traditional desi recipes</li>
+        <li>Delivery &amp; pickup across Gojra</li>
+        <li>Order online in just a few taps</li>
+      </ul>
+      <div class="about__cta">
+        <a class="btn btn--primary" href="#menu" data-action="order-now">Order Now</a>
+        <a class="btn btn--outline" href="#location">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     21. WHY CHOOSE US
+     ====================================================================== -->
+<section class="section section--tight" aria-labelledby="whyTitle">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Why us</p>
+      <h2 class="section__title" id="whyTitle">Why Choose Us</h2>
+    </header>
+    <div class="why-grid">
+      <article class="why-card" data-reveal>
+        <span class="why-card__ico" aria-hidden="true">🔥</span>
+        <h3>Freshly Prepared</h3>
+        <p>Quality food prepared fresh.</p>
+      </article>
+      <article class="why-card" data-reveal>
+        <span class="why-card__ico" aria-hidden="true">🥩</span>
+        <h3>Quality Ingredients</h3>
+        <p>Carefully selected ingredients.</p>
+      </article>
+      <article class="why-card" data-reveal>
+        <span class="why-card__ico" aria-hidden="true">👨‍🍳</span>
+        <h3>Delicious Desi Taste</h3>
+        <p>Authentic Pakistani BBQ flavors.</p>
+      </article>
+      <article class="why-card" data-reveal>
+        <span class="why-card__ico" aria-hidden="true">⚡</span>
+        <h3>Easy Ordering</h3>
+        <p>Order online quickly and easily.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     22. CUSTOMER REVIEWS
+     ====================================================================== -->
+<section class="section" id="reviews" aria-labelledby="reviewsTitle">
+  <div class="container">
+    <header class="section__head section__head--row" data-reveal>
+      <div>
+        <p class="eyebrow">Demo reviews</p>
+        <h2 class="section__title" id="reviewsTitle">What Customers Say</h2>
+        <p class="section__sub">These are clearly marked <strong>demo/sample reviews</strong> for layout purposes.</p>
+      </div>
+      <div class="slider-nav">
+        <button class="icon-btn icon-btn--ring" id="reviewPrev" type="button" aria-label="Previous review">‹</button>
+        <button class="icon-btn icon-btn--ring" id="reviewNext" type="button" aria-label="Next review">›</button>
+      </div>
+    </header>
+
+    <div class="review-viewport" id="reviewViewport" aria-live="polite">
+      <div class="review-track" id="reviewTrack"></div>
+    </div>
+    <div class="slider-dots" id="reviewDots" role="tablist" aria-label="Review slides"></div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     23. GALLERY
+     ====================================================================== -->
+<section class="section" id="gallery" aria-labelledby="galleryTitle">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Gallery</p>
+      <h2 class="section__title" id="galleryTitle">A Taste of Punjab</h2>
+      <p class="section__sub">Tap any photo to open it full screen. Use ← → to browse, Esc to close.</p>
+    </header>
+    <div class="chips chips--scroll" id="galleryChips" role="tablist" aria-label="Gallery categories"></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     24. LOCATION
+     ====================================================================== -->
+<section class="section" id="location" aria-labelledby="locationTitle">
+  <div class="container location">
+    <div class="location__info" data-reveal>
+      <p class="eyebrow">Location</p>
+      <h2 class="section__title" id="locationTitle">Visit Punjab Jab Tikkah Gojra</h2>
+      <ul class="info-list">
+        <li><span class="info-list__ico" aria-hidden="true">📍</span><div><strong>Address</strong><span data-config="address">Gojra, Punjab, Pakistan</span></div></li>
+        <li><span class="info-list__ico" aria-hidden="true">🕒</span><div><strong>Opening Hours</strong><span data-config="openingHours">12:00 PM – 11:00 PM</span></div></li>
+        <li><span class="info-list__ico" aria-hidden="true">🛵</span><div><strong>Delivery</strong><span>Available in Gojra and nearby areas</span></div></li>
+        <li><span class="info-list__ico" aria-hidden="true">🥡</span><div><strong>Pickup</strong><span>Pickup from Punjab Jab Tikkah Gojra</span></div></li>
+      </ul>
+      <p class="note">Exact street address not provided yet — update <code>RESTAURANT.address</code> in <code>script.js</code>.</p>
+      <div class="location__cta">
+        <a class="btn btn--primary" id="directionsBtn" href="#" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn--outline" id="locationCallBtn" href="#">Call Us</a>
+      </div>
+    </div>
+
+    <div class="location__map" data-reveal>
+      <div class="map-embed">
+        <iframe
+          id="mapFrame"
+          title="Map showing Punjab Jab Tikkah Gojra location"
+          src="about:blank"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-placeholder" id="mapPlaceholder">
+          <span class="map-placeholder__ico" aria-hidden="true">📍</span>
+          <strong>Gojra, Punjab, Pakistan</strong>
+          <span>Map preview — set <code>RESTAURANT.mapEmbedUrl</code> in <code>script.js</code> to embed Google Maps.</span>
+          <button class="btn btn--outline btn--sm" id="loadMapBtn" type="button">Load Map Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================================
+     25. CONTACT
+     ====================================================================== -->
+<section class="section section--tight" id="contact" aria-labelledby="contactTitle">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">Contact</p>
+      <h2 class="section__title" id="contactTitle">Get In Touch</h2>
+      <p class="section__sub">Placeholder values live in one config object at the top of <code>script.js</code>.</p>
+    </header>
+    <div class="contact-grid" id="contactGrid"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================================================================
+     26. FOOTER
+     ====================================================================== -->
+<footer class="footer" id="footer">
+  <div class="footer__glow" aria-hidden="true"></div>
+  <div class="container footer__grid">
+
+    <div class="footer__brand">
+      <a class="brand brand--footer" href="#home">
+        <img class="brand__logo" src="assets/logo.png" alt="Punjab Jab Tikkah Gojra logo" width="56" height="56" data-logo />
+        <span class="brand__text"><span class="brand__name">Punjab Jab Tikkah</span><span class="brand__place">Gojra</span></span>
+      </a>
+      <p class="footer__tag">Authentic BBQ &amp; Desi Taste in Gojra</p>
+      <p class="footer__addr"><span aria-hidden="true">📍</span> <span data-config="address">Gojra, Punjab, Pakistan</span></p>
+      <div class="footer__social" id="footerSocial"></div>
+    </div>
+
+    <nav class="footer__col" aria-labelledby="footerQuick">
+      <h3 id="footerQuick">Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#deals">Deals</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <nav class="footer__col" aria-labelledby="footerOrder">
+      <h3 id="footerOrder">Order</h3>
+      <a href="#menu" data-action="order-now">Order Online</a>
+      <a href="#" id="footerWhatsApp" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#" id="footerMyOrders">My Orders</a>
+      <a href="#" id="footerDemoOrders">Demo Orders</a>
+      <a href="#location">Get Directions</a>
+    </nav>
+
+    <div class="footer__col footer__col--hours">
+      <h3>Opening Hours</h3>
+      <p class="open-status" id="openStatus" data-open="false" role="status" aria-live="polite">
+        <span class="open-status__dot" aria-hidden="true"></span>
+        <span id="openStatusText">Checking hours…</span>
+      </p>
+      <p data-config="openingHours">12:00 PM – 11:00 PM</p>
+      <p class="footer__note">Open daily for lunch &amp; dinner.</p>
+      <button class="btn btn--primary btn--sm" id="footerOrderBtn" type="button">Order Now</button>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© <span id="year">2026</span> <span data-config="name">Punjab Jab Tikkah Gojra</span>. All Rights Reserved.</p>
+    <p class="footer__live">
+      <span class="footer__live-ico" aria-hidden="true">🕒</span>
+      Local time <b id="liveClock">--:--:--</b>
+    </p>
+    <p class="footer__disclaimer">Frontend demo — orders are stored in your browser only. No real payment is processed.</p>
+  </div>
+</footer>
+
+<!-- ======================================================================
+     STICKY CART BAR (mobile) / FLOATING CART PILL (desktop)
+     ====================================================================== -->
+<button class="sticky-cart" id="stickyCartBtn" type="button" hidden>
+  <span class="sticky-cart__badge" id="stickyCartCount">0</span>
+  <span class="sticky-cart__label">🛒 <span id="stickyCartText">0 items — Rs. 0</span></span>
+  <span class="sticky-cart__order">Order →</span>
+</button>
+
+<button class="to-top" id="toTopBtn" type="button" aria-label="Back to top" hidden>↑</button>
+
+<!-- ======================================================================
+     8. PRODUCT DETAILS MODAL
+     ====================================================================== -->
+<div class="modal modal--product" id="productModal" hidden role="dialog" aria-modal="true" aria-labelledby="pmName">
+  <div class="modal__backdrop" data-close-modal></div>
+
+  <div class="modal__dialog modal__dialog--product" role="document">
+
+    <!-- mobile-only top bar: back + favourite live over the image -->
+    <div class="pm__bar">
+      <button class="pm__icon" id="pmBackBtn" type="button" data-close-modal aria-label="Go back">
+        <span aria-hidden="true">←</span>
+      </button>
+      <span class="pm__bar-title" id="pmBarTitle"></span>
+    </div>
+
+    <div class="pm">
+
+      <!-- LEFT / TOP: large media -->
+      <div class="pm__media">
+        <div class="pm__stage">
+          <img id="pmImage" src="" alt="" width="1200" height="900" decoding="async" />
+          <span class="pm__cat" id="pmCategory"></span>
+          <button class="pm__fav" id="pmFavBtn" type="button" aria-pressed="false" aria-label="Save to favourites">
+            <span class="pm__fav-ico" aria-hidden="true">♡</span>
+          </button>
+        </div>
+        <div class="pm__thumbs" id="pmThumbs" role="group" aria-label="Product images" hidden></div>
+      </div>
+
+      <!-- RIGHT / BOTTOM: information + customisation -->
+      <div class="pm__body">
+        <div class="pm__head">
+          <h2 class="pm__name" id="pmName"></h2>
+          <div class="pm__rating">
+            <span class="stars" id="pmStars" aria-hidden="true"></span>
+            <span class="pm__rating-num" id="pmRatingNum"></span>
+            <span class="pm__rating-note" id="pmRatingText"></span>
+          </div>
+        </div>
+
+        <p class="pm__desc" id="pmDesc"></p>
+
+        <div class="pm__price-row">
+          <span class="pm__price"><span data-price></span></span>
+          <s class="pm__was" id="pmWasPrice" hidden></s>
+          <span class="pm__off" id="pmOffBadge" hidden></span>
+        </div>
+
+        <!-- QUANTITY -->
+        <section class="pm__block">
+          <h3 class="pm__label" id="pmQtyLabel">Quantity</h3>
+          <div class="pm-qty" role="group" aria-labelledby="pmQtyLabel">
+            <button class="pm-qty__btn" id="pmQtyMinus" type="button" aria-label="Decrease quantity">&minus;</button>
+            <input class="pm-qty__value" id="pmQty" type="text" inputmode="numeric" value="1"
+                   aria-labelledby="pmQtyLabel" readonly />
+            <button class="pm-qty__btn" id="pmQtyPlus" type="button" aria-label="Increase quantity">+</button>
+          </div>
+          <p class="pm__calc" id="pmCalc" aria-live="polite"></p>
+        </section>
+
+        <!-- SPICE LEVEL (hidden when the product has no spice option) -->
+        <section class="pm__block" id="pmSpiceBlock">
+          <h3 class="pm__label" id="pmSpiceLabel">Spice level</h3>
+          <div class="pm-picks" id="pmSpice" role="radiogroup" aria-labelledby="pmSpiceLabel"></div>
+        </section>
+
+        <!-- EXTRAS (hidden when the product has no extras) -->
+        <section class="pm__block" id="pmExtrasBlock">
+          <h3 class="pm__label" id="pmExtrasLabel">Extras</h3>
+          <div class="pm-picks pm-picks--multi" id="pmExtras" role="group" aria-labelledby="pmExtrasLabel"></div>
+        </section>
+
+        <!-- SPECIAL INSTRUCTIONS -->
+        <section class="pm__block">
+          <h3 class="pm__label" id="pmNotesLabel">Special instructions <span class="pm__opt">Optional</span></h3>
+          <textarea class="pm__notes" id="pmNotes" rows="3" maxlength="150"
+                    placeholder="Example: Less spicy, extra sauce, no onions..."
+                    aria-labelledby="pmNotesLabel"></textarea>
+          <p class="pm__counter"><span id="pmNotesCount">0</span>/150</p>
+        </section>
+      </div>
+
+      <!-- STICKY TOTAL + CTA -->
+      <div class="pm__cta">
+        <div class="pm__total">
+          <span class="pm__total-label">Total</span>
+          <strong id="pmTotal">Rs. 0</strong>
+        </div>
+        <div class="pm__cta-actions">
+          <button class="btn btn--primary pm__add" id="pmAddToCart" type="button">
+            <span aria-hidden="true">🛒</span> Add to Cart
+          </button>
+          <button class="btn btn--ghost pm__order" id="pmOrderNow" type="button">Order now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="modal__close modal__close--product" type="button" data-close-modal aria-label="Close product details">&times;</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<!-- ======================================================================
+     10. SHOPPING CART DRAWER
+     ====================================================================== -->
+<div class="drawer" id="cartDrawer" hidden role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <div class="drawer__backdrop" data-close-cart></div>
+  <aside class="drawer__panel drawer__panel--cart" aria-label="Shopping cart">
+    <header class="drawer__head">
+      <h2 id="cartTitle">Your Cart <span class="drawer__count" id="cartDrawerCount">(0)</span></h2>
+      <button class="icon-btn" type="button" data-close-cart aria-label="Close cart">&times;</button>
+    </header>
+
+    <div class="drawer__body" id="cartBody"></div>
+
+    <div class="drawer__foot" id="cartFoot" hidden>
+      <div class="promo">
+        <label class="sr-only" for="promoInput">Promo code</label>
+        <input class="promo__input" id="promoInput" type="text" placeholder="Promo code (try PJT10)" autocomplete="off" />
+        <button class="btn btn--outline btn--sm" id="promoApply" type="button">Apply</button>
+      </div>
+      <p class="promo__msg" id="promoMsg" role="status"></p>
+
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="tSubtotal">Rs. 0</dd></div>
+        <div><dt>Delivery Fee</dt><dd id="tDelivery">Rs. 0</dd></div>
+        <div class="totals__discount" id="tDiscountRow" hidden><dt>Discount <button class="link-x" id="clearPromo" type="button" aria-label="Remove promo code">✕</button></dt><dd id="tDiscount">− Rs. 0</dd></div>
+        <div class="totals__grand"><dt>Total</dt><dd id="tGrand">Rs. 0</dd></div>
+      </dl>
+      <p class="totals__note">Taxes included. Delivery fee shown at checkout.</p>
+
+      <button class="btn btn--primary btn--block btn--lg" id="checkoutBtn" type="button">Proceed to Checkout</button>
+      <button class="btn btn--ghost btn--block" id="whatsappCartBtn" type="button">Order on WhatsApp</button>
+    </div>
+  </aside>
+</div>
+
+<!-- ======================================================================
+     13. CHECKOUT MODAL (multi-step)
+     ====================================================================== -->
+<div class="modal modal--checkout" id="checkoutModal" hidden role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+  <div class="modal__backdrop" data-close-checkout></div>
+  <div class="modal__dialog modal__dialog--checkout" role="document">
+
+    <header class="checkout__head">
+      <div class="checkout__head-top">
+        <img src="assets/logo.png" alt="" width="38" height="38" data-logo />
+        <h2 id="checkoutTitle">Checkout</h2>
+        <button class="icon-btn" type="button" data-close-checkout aria-label="Close checkout">&times;</button>
+      </div>
+      <ol class="steps" id="checkoutSteps" aria-label="Checkout progress"></ol>
+    </header>
+
+    <div class="checkout__body" id="checkoutBody"></div>
+
+    <footer class="checkout__foot" id="checkoutFoot"></footer>
+  </div>
+</div>
+
+<!-- ======================================================================
+     17. ORDER TRACKING DEMO MODAL
+     ====================================================================== -->
+<div class="modal" id="trackModal" hidden role="dialog" aria-modal="true" aria-labelledby="trackTitle">
+  <div class="modal__backdrop" data-close-track></div>
+  <div class="modal__dialog modal__dialog--md" role="document">
+    <button class="modal__close" type="button" data-close-track aria-label="Close order tracking">&times;</button>
+    <div id="trackContent"></div>
+  </div>
+</div>
+
+<!-- ======================================================================
+     30. DEMO ADMIN ORDER DASHBOARD
+     ====================================================================== -->
+<div class="modal" id="adminModal" hidden role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+  <div class="modal__backdrop" data-close-admin></div>
+  <div class="modal__dialog modal__dialog--wide" role="document">
+    <button class="modal__close" type="button" data-close-admin aria-label="Close demo orders">&times;</button>
+    <header class="admin__head">
+      <h2 id="adminTitle">Demo Orders</h2>
+      <p class="warn">
+        ⚠️ <strong>Frontend demo only.</strong> This is <em>not</em> a secure production admin panel.
+        Orders are stored in this browser's <code>localStorage</code> and can be edited or cleared by anyone with access to this device.
+      </p>
+    </header>
+    <div class="admin__toolbar">
+      <div class="admin__stats" id="adminStats"></div>
+      <div class="admin__tools">
+        <button class="btn btn--outline btn--sm" id="clearOrdersBtn" type="button">Clear Demo Orders</button>
+      </div>
+    </div>
+    <div class="admin__table-wrap">
+      <table class="admin__table">
+        <thead>
+          <tr><th>Order #</th><th>Customer</th><th>Phone</th><th>Items</th><th>Total</th><th>Type</th><th>Status</th><th>Date</th></tr>
+        </thead>
+        <tbody id="adminOrdersBody"></tbody>
+      </table>
+      <p class="empty" id="adminEmpty" hidden>No demo orders yet. Place an order to see it here.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================================
+     23b. GALLERY LIGHTBOX
+     ====================================================================== -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close image viewer">✕</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Previous image">‹</button>
+  <figure class="lightbox__figure">
+    <img id="lightboxImage" src="" alt="" />
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Next image">›</button>
+</div>
+
+<!-- ======================================================================
+     19. SPECIAL OFFER POPUP
+     ====================================================================== -->
+<div class="offer" id="offerPopup" hidden role="dialog" aria-modal="true" aria-labelledby="offerTitle">
+  <div class="offer__backdrop" data-close-offer></div>
+  <div class="offer__box">
+    <button class="offer__close" id="offerClose" type="button" aria-label="Close special offer">✕</button>
+    <img class="offer__logo" src="assets/logo.png" alt="" width="72" height="72" data-logo />
+    <p class="eyebrow">🔥 Today’s Special</p>
+    <h3 id="offerTitle">Get our Family BBQ Platter</h3>
+    <p class="offer__desc">Chicken Tikkah, Beef Seekh Kebab, Chicken Boti, Fries and Drinks — served for the whole family.</p>
+    <p class="offer__price"><span>Rs. 1,999</span></p>
+    <div class="offer__actions">
+      <button class="btn btn--primary btn--block" id="offerOrderBtn" type="button">Order Now</button>
+      <button class="btn btn--ghost btn--block" id="offerDismiss" type="button">Maybe later</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================================
+     29. TOASTS
+     ====================================================================== -->
+<div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+<!-- ======================================================================
+     31. PRINTABLE RECEIPT
+     ====================================================================== -->
+<div class="receipt" id="receipt" aria-hidden="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
